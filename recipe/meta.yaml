@@ -27,14 +27,21 @@ requirements:
     - toml >=0.10.1
 
 test:
+  source_files:
+    - tests
   imports:
     - mpl_plotter
+  commands:
+    - pip check
+    - pytest -vvv --capture=tee-sys tests
+  requires:
+    - pip
+    - pytest
 
 about:
   home: https://github.com/alopezrivera/mpl_plotter
   summary: Publication-quality data representation library based on Matplotlib.
   license: GPL-3.0-or-later
-  # Will PR upstream to pacakge in license
   license_file: LICENSE
 
 extra:
