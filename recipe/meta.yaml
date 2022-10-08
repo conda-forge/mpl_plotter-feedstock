@@ -1,5 +1,5 @@
 {% set name = "mpl_plotter" %}
-{% set version = "5.3.0" %}
+{% set version = "5.4.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 6b9998569c47c4a9452742b5cedfe6d6f6a296c7e50128081d3fb0a6b23f0abd
+  sha256: 3d878c581380ce166e1567b380c626cdbc5bd75fc7ec2a2ab1286093e0140f69
 
 build:
   noarch: python
