@@ -6,24 +6,24 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: 3ca333ffde47213b8310a3f26b3643ca858fffbf0608c0b576e6e5ba699b9fee
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   host:
     - pip
-    - python >=3.6
+    - python {{ python_min }}
   run:
     - matplotlib-base >=3.5.2
     - numpy >=1.19.5
     - pandas >=1.1.5
     - pyqt
-    - python >=3.6
+    - python >={{ python_min }}
     - toml >=0.10.1
 
 test:
@@ -38,6 +38,7 @@ test:
   requires:
     - pip
     - pytest
+    - python {{ python_min }}
 
 about:
   home: https://github.com/alopezrivera/mpl_plotter
